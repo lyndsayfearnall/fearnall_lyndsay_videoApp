@@ -1,0 +1,21 @@
+<a href="/">
+  <i class="fa fa-home"></i>
+</a>
+
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<h3>Movies</h3>
+
+<ul>
+  {{#each movData}}
+
+    <li>
+      <h4>{{ movie_name }}</h4>
+      <img src="images/{{movie_picture}}" alt="{{movie_name}} poster">
+      <p> {{ movie_description }}</p>
+      <a id= "{{ movie_id }}" class="singleMovie" href="getMovies/{{movie_id}}">View Movie</a>
+    </li>
+
+  {{/each}}
+</ul>

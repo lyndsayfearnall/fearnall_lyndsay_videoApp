@@ -1,0 +1,15 @@
+<a href="/">
+  <i class="fa fa-home"></i>
+</a>
+<a href="/getMovies">
+  Back to movies
+</a>
+
+<h1>{{movData.movie_name}}</h1>
+<p>{{movData.movie_year}}</p>
+<p>Director: {{movData.movie_director}}</p>
+<p>{{movData.movie_rating}}/10</p>
+<p>{{movData.movie_genre}}</p>
+<img src="/images/{{movData.movie_picture}}" alt="{{movData.movie_name}}">
+<video src="/videos/{{movData.movie_clip}}" autoplay poster="posterimage.jpg"></video>
+<p>{{movData.movie_description}}</p>
