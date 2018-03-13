@@ -11,27 +11,27 @@ router.get('/', function(req, res, next) {
       console.log (result);
 
       res.render( 'allMovies', {
-        title: 'OscarNoms kids',
+        title: 'Kids',
         movData: result
       });
     }
   });
 });
 
-router.get('/:movie', function(req, res){
-  connect.query(`SELECT * FROM tbl_movies where movie_id="${req.params.movie}"`, (err, result) => {
-    if (err) {
-      throw err;
-      console.log(err);
-    } else {
-      console.log(result[0]);
-
-      res.render('singleMovie', {
-        title: "Movies",
-        movData: result[0]
-      });
-    }
-  });
-});
+// router.get('/:movie', function(req, res){
+//   connect.query(`SELECT * FROM tbl_movies where movie_id="${req.params.movie}"`, (err, result) => {
+//     if (err) {
+//       throw err;
+//       console.log(err);
+//     } else {
+//       console.log(result[0]);
+//
+//       res.render('singleMovie', {
+//         title: "Movies",
+//         movData: result[0]
+//       });
+//     }
+//   });
+// });
 
 module.exports = router;

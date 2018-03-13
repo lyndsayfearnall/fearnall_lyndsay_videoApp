@@ -1,0 +1,22 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="66 57 452 99">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e8b55f;
+        font-size: 77px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: STHeitiSC-Medium, Heiti SC;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #ae9d6b;
+        font-size: 25px;
+      }
+    </style>
+  </defs>
+  <text id="Oscar_Noms" data-name="Oscar Noms" class="cls-1" transform="translate(66 123)"><tspan x="0" y="0">Oscar Noms</tspan></text>
+  <text id="only_academy_nominated_films" data-name="only academy nominated films" class="cls-2" transform="translate(142 152)"><tspan x="0" y="0">only academy nominated films</tspan></text>
+</svg>

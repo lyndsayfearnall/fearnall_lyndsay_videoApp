@@ -1,21 +1,20 @@
-<a href="/">
-  <i class="fa fa-home"></i>
-</a>
+<div class="row">
+  <h1 class="col-sm-6" id="title">{{title}}</h1>
+  <a href="/" class="col-sm-6" id="home">
+    <i class="fa fa-home"></i>
+  </a>
+</div>
 
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-
-<h3>Movies</h3>
-
-<ul>
-  {{#each movData}}
-
-    <li>
-      <h4>{{ movie_name }}</h4>
-      <img src="images/{{movie_picture}}" alt="{{movie_name}} poster">
-      <p> {{ movie_description }}</p>
-      <a id= "{{ movie_id }}" class="singleMovie" href="getMovies/{{movie_id}}">View Movie</a>
-    </li>
-
-  {{/each}}
-</ul>
+<div class="row">
+    <!-- <ul> -->
+      {{#each movData}}
+      <div class="col-sm-4 movie">
+        <!-- <li> -->
+          <h4>{{ movie_name }}</h4>
+          <a href="getMovie/{{movie_id}}"><img src="images/{{movie_picture}}" alt="{{movie_name}} poster" class="movieThumb"></a>
+          <a id= "{{ movie_id }}" class="singleMovie btn" href="getMovie/{{movie_id}}">View Movie</a>
+        <!-- </li> -->
+      </div>
+      {{/each}}
+    <!-- </ul> -->
+</div>
