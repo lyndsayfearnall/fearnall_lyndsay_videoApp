@@ -1,0 +1,19 @@
+<div class="row">
+  <h1 class="col-sm-6" id="title">{{movData.movie_name}}</h1>
+  <a href="/" class="col-sm-6" id="home">
+    <i class="fa fa-home"></i>
+  </a>
+  <div class="col">
+    <p>{{ movData.movie_genre}} &nbsp; | &nbsp; {{movData.movie_year}} </p>
+  </div>
+</div>
+
+<!-- <img src="/images/{{!movData.movie_picture}}" alt="{{!movData.movie_name}}"> -->
+<video controls src="/videos/{{movData.movie_clip}}" autoplay></video>
+<div class="row" id="movDesc">
+  <div class="col">
+    <p>Director:  &nbsp; {{movData.movie_director}}</p>
+    <p>Rating: &nbsp; {{ movData.movie_rating}}/10</p>
+    <p>{{movData.movie_description}}</p>
+  </div>
+</div>

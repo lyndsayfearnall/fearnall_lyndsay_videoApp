@@ -1,8 +1,81 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px 'Questrial', Helvetica, Arial, sans-serif;
+  background: #1C1C1C;
+  color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  transition: 0.5s;
+}
+
+a:hover{
+  color: teal;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
+#mainLogo {
+  margin-top: 15px;
+}
+
+#login-options {
+  text-align: center;
+  height: 90vh;
+}
+
+#login-options img{
+  width: 200px;
+  height: 200px;
+  padding: 8px;
+  border: 2px solid teal;
+}
+
+.login-label{
+  margin-top: 10px;
+}
+
+.movieThumb{
+  max-width: 100%;
+}
+
+.test{
+  height: 175px;
+}
+
+.singleMovie{
+  background-color: teal;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.singleMovie a:hover {
+  color: white;
+}
+
+.movie{
+  margin-bottom: 40px;
+}
+
+#title{
+  color: teal;
+}
+
+#home{
+  text-align: right;
+}
+
+video{
+  max-width: 100%;
+}
+
+#movDesc{
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
