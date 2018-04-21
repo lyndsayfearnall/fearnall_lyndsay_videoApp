@@ -1,0 +1,33 @@
+<section id="video">
+  <div class="container mb-3">
+    <a href="/" class="backBtn">
+      <i class="fas fa-arrow-alt-circle-left"></i>
+    </a>
+  </div>
+
+  <video autoplay controls width="100%" class="mb-4">
+    <source src="/videos/{{ moviesrc }}" type="video/mp4">
+  </video>
+
+<div class="container">
+  <article class="comments" v-if="reviews.length > 0">
+    <div v-for="review in reviews">
+      <review-stars :value="review.comments_rating" :disabled="true"></review-stars>
+      <i class="post-date">${ review.comments_date }</i>
+      <p>
+        ${ review.comments_text }
+      </p>
+    </div>
+  </article>
+
+  <aside class="add-comment" :class="{ floatRight : reviews.length > 0 }">
+    <h4>Add a Review</h4>
+    <span hidden class="movId">{{ movie }}</span>
+    <review-stars v-model="numStars" :disabled="false"></review-stars>
+    <textarea name="review" id="review" placeholder="Leave a review!" v-model="review"></textarea>
+    <input type="submit" value="Submit Review" v-on:click="addReview">
+  </aside>
+</div>
+</section>
+<!-- :href="'/movies/' + movie.movie_id + '/' + movie.movie_clip"
+<div class="fb-share-button" :data-href="'http://www.oscarNoms.com/movies/'+ movie.movie_id + '/' + movie.movie_clip" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->

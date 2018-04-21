@@ -1,14 +1,11 @@
 var express = require('express');
+var videoController = require('../controllers/videoController');
 var router = express.Router();
-var config = require('../config');
 
-var toRender = (config.kidsmode) ? 'main_kids' : 'index';
+router.get('/', videoController.get_all_movies);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render( toRender, {
-    title: 'OscarNoms'
-  });
-});
+router.get('/movies/:id/:movie', videoController.get_one_movie);
+
+// router.post('/api', videoController.pos_new_review);
 
 module.exports = router;

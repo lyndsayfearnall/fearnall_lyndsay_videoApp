@@ -1,0 +1,32 @@
+<section id="app">
+  <div class="mov-wrapper container-fluid mb-4">
+    <div class="row pl-4 pr-4">
+      <div class="col- mov-info">
+        <h4>{{ defaultMovie.movie_name }}</h4>
+        <p>
+          {{defaultMovie.movie_year}}  &nbsp | &nbsp {{ defaultMovie.movie_genre }}
+        </p>
+        <!-- <i class="mov-genre">{{ defaultMovie.movie_genre }}</i> -->
+      </div>
+    </div>
+    <video autoplay controls width="100%">
+      <source src="videos/{{ defaultMovie.movie_clip }}">
+    </video>
+    <!-- <div class="embed-responsive">
+      <iframe class="embed-responsive-item embed-responsive-16by9" src="videos/{{ defaultMovie.movie_clip }}"></iframe>
+    </div> -->
+  </div>
+
+  <section class="container genre-lists" v-for="genre in genres">
+    <div v-if="genre.movies.length > 0">
+      <div class="genre-list row mb-4">
+        <h6 class="genre-name col-12">${ genre.name }</h6>
+        <div class="movie-list col-3 mb-4" v-for="movie in genre.movies">
+          <a :href="'/movies/' + movie.movie_id + '/' + movie.movie_clip">
+            <img :src="'images/' + movie.movie_picture" :alt="movie.movie_name" class="movie-thumb" width="100%">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

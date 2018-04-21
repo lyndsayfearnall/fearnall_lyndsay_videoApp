@@ -1,5 +1,5 @@
-# Node, Express, SQL video app
-My completed video app assignment submission.
+# Updated Vue video app
+My completed video app assignment submission, now with vue.
 How to get it started:
 
   1.Clone the repo to a directory
