@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 15, 2018 at 07:15 PM
+-- Generation Time: Apr 25, 2018 at 07:25 AM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -19,6 +19,48 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_videoApp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_comments`
+--
+
+CREATE TABLE `tbl_comments` (
+  `comments_id` int(11) NOT NULL,
+  `comments_text` text NOT NULL,
+  `comments_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `comments_movie` mediumint(255) NOT NULL,
+  `comments_rating` tinyint(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_comments`
+--
+
+INSERT INTO `tbl_comments` (`comments_id`, `comments_text`, `comments_date`, `comments_movie`, `comments_rating`) VALUES
+(1, 'I\'ve seen this movie way too many times. I can\'t even tell if it\'s good or not anymore', '2018-04-19 21:37:28', 1, 2),
+(2, 'OMG I LOVE TOM HANKS', '2018-04-19 21:37:28', 1, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_genre`
+--
+
+CREATE TABLE `tbl_genre` (
+  `genre_id` int(11) NOT NULL,
+  `genre_name` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_genre`
+--
+
+INSERT INTO `tbl_genre` (`genre_id`, `genre_name`) VALUES
+(1, 'Drama'),
+(2, 'Comedy'),
+(3, 'Adventure');
 
 -- --------------------------------------------------------
 
@@ -63,9 +105,67 @@ INSERT INTO `tbl_movies` (`movie_id`, `movie_name`, `movie_genre`, `movie_pictur
 (17, 'The Shape of Water', 'Adventure', 'shapeOfWater.jpg', 'shapeOfWater.mp4', '2017', 'Elisa is a mute, isolated woman who works as a cleaning lady in a hidden, high-security government laboratory in 1962 Baltimore. Her life changes forever when she discovers the lab\'s classified secret -- a mysterious, scaled creature from South America that lives in a water tank. As Elisa develops a unique bond with her new friend, she soon learns that its fate and very survival lies in the hands of a hostile government agent and a marine biologist.', 8, 'Guillermo del Toro', 0),
 (18, 'Life of Pi', 'Adventure', 'lifeofPi.jpg', 'lifeofPi.mp4', '2012', 'After deciding to sell their zoo in India and move to Canada, Santosh and Gita Patel board a freighter with their sons and a few remaining animals. Tragedy strikes when a terrible storm sinks the ship, leaving the Patels\' teenage son, Pi, as the only human survivor. However, Pi is not alone; a fearsome Bengal tiger has also found refuge aboard the lifeboat. As days turn into weeks and weeks drag into months, Pi and the tiger must learn to trust each other if both are to survive.', 8, 'Ang Lee', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_mov_genre`
+--
+
+CREATE TABLE `tbl_mov_genre` (
+  `mov_genre_id` int(11) NOT NULL,
+  `movie_id` mediumint(255) NOT NULL,
+  `genre_id` mediumint(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_mov_genre`
+--
+
+INSERT INTO `tbl_mov_genre` (`mov_genre_id`, `movie_id`, `genre_id`) VALUES
+(1, 1, 1),
+(2, 1, 3),
+(3, 2, 1),
+(4, 3, 1),
+(5, 3, 3),
+(6, 4, 1),
+(7, 4, 2),
+(8, 5, 1),
+(9, 6, 1),
+(10, 6, 3),
+(11, 7, 1),
+(12, 7, 2),
+(13, 8, 2),
+(14, 9, 2),
+(15, 10, 2),
+(16, 11, 2),
+(17, 11, 3),
+(18, 12, 2),
+(19, 13, 1),
+(20, 13, 3),
+(21, 14, 2),
+(22, 14, 3),
+(23, 15, 2),
+(24, 15, 3),
+(25, 16, 1),
+(26, 16, 3),
+(27, 17, 1),
+(28, 18, 3);
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_comments`
+--
+ALTER TABLE `tbl_comments`
+  ADD PRIMARY KEY (`comments_id`);
+
+--
+-- Indexes for table `tbl_genre`
+--
+ALTER TABLE `tbl_genre`
+  ADD PRIMARY KEY (`genre_id`);
 
 --
 -- Indexes for table `tbl_movies`
@@ -74,14 +174,35 @@ ALTER TABLE `tbl_movies`
   ADD PRIMARY KEY (`movie_id`);
 
 --
+-- Indexes for table `tbl_mov_genre`
+--
+ALTER TABLE `tbl_mov_genre`
+  ADD PRIMARY KEY (`mov_genre_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `tbl_comments`
+--
+ALTER TABLE `tbl_comments`
+  MODIFY `comments_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `tbl_genre`
+--
+ALTER TABLE `tbl_genre`
+  MODIFY `genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_movies`
 --
 ALTER TABLE `tbl_movies`
   MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `tbl_mov_genre`
+--
+ALTER TABLE `tbl_mov_genre`
+  MODIFY `mov_genre_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
